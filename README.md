@@ -1,11 +1,16 @@
-## My Project
+# AWS IoT SiteWise Tools
 
-TODO: Fill this README out!
+This repository contains tools that can be used to automate various tasks in the AWS IoT SitWise service. Please see the README for each tool for details and instructions. 
 
-Be sure to:
+Note: These tools use the AWS SDK for SiteWise (mostly Boto3) they assume you have the SDKs installed and have AWS credentials setup on your machine that will give you access to the various API operations the tools require. 
 
-* Change the title in this README
-* Edit your repository description on GitHub
+## Table of Contents
+
+### SiteWise Export Tools
+Contains an Asset Model export tool that will generate a CloudFormation template of all asset models (including the hierarchy information) for a given region in an AWS account.
+
+### SiteWise Monitor Dashboard Replicator
+Contains a CLI tool that replicates a dashboard of a given asset for all assets of the same asset model. This useful if you have dashboards for each machine and want to copy and keep them in sync for all machines of the same type.
 
 ## Security
 
