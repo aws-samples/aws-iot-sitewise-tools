@@ -1,6 +1,6 @@
 # AWS IoT SiteWise Tools
 
-This repository contains tools that can be used to automate various tasks in the AWS IoT SitWise service. Please see the README for each tool for details and instructions. 
+This repository contains tools that can be used to automate various tasks in the AWS IoT SiteWise service. Please see the README for each tool for details and instructions. 
 
 Note: These tools use the AWS SDK for SiteWise (mostly Boto3) they assume you have the SDKs installed and have AWS credentials setup on your machine that will give you access to the various API operations the tools require. 
 
