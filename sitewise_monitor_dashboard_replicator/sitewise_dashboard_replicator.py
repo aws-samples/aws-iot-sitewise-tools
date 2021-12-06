@@ -40,8 +40,8 @@ def list_portals():
     pages = portals_paginator.paginate()
     for page in pages:
         if page['portalSummaries']:
-            for project in page['portalSummaries']:
-                portals.append(project['id'])
+            for portal in page['portalSummaries']:
+                portals.append(portal['id'])
     return portals
 
 def list_projects(portal_id):
