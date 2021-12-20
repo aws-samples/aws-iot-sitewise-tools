@@ -178,3 +178,4 @@ if __name__ == '__main__':
 
     #print the json just output a template file: python3 AssetModelExporter.py > mytemplate.template
     print(json.dumps(cfn_base, indent=1))
+    
