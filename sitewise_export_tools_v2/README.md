@@ -8,16 +8,16 @@ Note: The tool does not currently support alarms.
 
 ### Usage
 
-Call `./main.py` to export SIteWise models and/or assets into the `./cfnexport` destination folder.
+Call `./main.py` to export SiteWise models and/or assets into the `./cfnexport` destination folder.
 
 ```shell
 $ python3 main.py --help
 usage: main.py [-h] [--profile PROFILE] [--region REGION] [-a [ASSET_ID [ASSET_ID ...]]] [-v]
 
-Asset & Model Export Tool For SiteWise
+Asset & Model Export Tool For AWS SiteWise
 
 optional arguments:
-  -h, --help            show this help message and exit
+  -h, --help            Show this help message and exit
   --profile PROFILE     Credentials profile for the AWS account
   --region REGION       Specify the AWS region you would like to target
   -a [ASSET_ID [ASSET_ID ...]], --assets [ASSET_ID [ASSET_ID ...]]
@@ -70,6 +70,7 @@ $ python3 ./main.py -v -a c595dea7-f616-4233-984c-0a6367738e4a abcf1b29-8ae5-4b2
 
 In this scenario, the list of assets gets populated at runtime with the top-level list of Sitewise assets. 
 ```shell
+$ python3 ./main.py -v --assets
 05/10/2022 03:25:11 PM main DEBUG: ./main.py called with arguments: Namespace(assets=[], profile=None, region=None, verbose=True)
 05/10/2022 03:25:11 PM models DEBUG: Scanning SiteWise models ...
 05/10/2022 03:25:12 PM models INFO: Discovered model "TestModel"
