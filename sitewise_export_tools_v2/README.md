@@ -70,6 +70,7 @@ $ python3 ./main.py -v -a c595dea7-f616-4233-984c-0a6367738e4a abcf1b29-8ae5-4b2
 
 In this scenario, the list of assets gets populated at runtime with the top-level list of Sitewise assets. 
 ```shell
+$ python3 ./main.py -v -a
 05/10/2022 03:25:11 PM main DEBUG: ./main.py called with arguments: Namespace(assets=[], profile=None, region=None, verbose=True)
 05/10/2022 03:25:11 PM models DEBUG: Scanning SiteWise models ...
 05/10/2022 03:25:12 PM models INFO: Discovered model "TestModel"
