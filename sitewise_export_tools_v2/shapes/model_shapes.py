@@ -11,8 +11,7 @@ AssetModel = json.loads('''
       "AssetModelDescription" : "",
       "AssetModelHierarchies" : [],
       "AssetModelName" : "",
-      "AssetModelProperties" : [],
-      "AssetModelCompositeModels": [],
+      "AssetModelProperties" : [],      
       "Tags" : []
     }
 }
