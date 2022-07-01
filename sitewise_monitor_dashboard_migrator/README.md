@@ -15,12 +15,12 @@ This makes SiteWise Monitor dashboard development, automation, and portability b
 # Pre-requisites
 
 1. Assets and Properties names in source and destination environment have to be identical. This usually shouldn't be a problem for customers following DevOps and CI/CD practices where environment deployments and infrastructure operations is automated but worth calling out if you plan on prefixing names with a unique identifier.  
-2. A SiteWise Portal and a project with the previously mentioned asset (at least those used in the dashboards) assigned to the project. Please see the sitewise_export_tools for scripts to export/import Models and Assets to other accounts and/or regions.  
+2. A SiteWise Portal and a project with the previously mentioned asset (at least those used in the dashboards) assigned to the project. Please see the `sitewise_export_tools` folder in this repository for scripts to export/import Models and Assets to other accounts and/or regions.  
 3. Credentials with permissions to call AWS SiteWise APIs in both source and destination accounts  are needed.
 
 # Use
 
-This script is developed as and AWS Lambda function. For simplicity, we set source and destination credentials as Lambda environmental variables.
+This script is developed as an AWS Lambda function. For simplicity, we set source and destination credentials as Lambda environmental variables.
 ---
 If you are planning to use this script for something else other than testing, please store your keys in AWS Secret Manager.
 https://docs.aws.amazon.com/code-samples/latest/catalog/python-secretsmanager-secretsmanager_basics.py.html
