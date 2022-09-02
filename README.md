@@ -9,6 +9,9 @@ Note: These tools use the AWS SDK for SiteWise (mostly Boto3) they assume you ha
 ### SiteWise Export Tools V2
 Contains an Asset and Asset Model export tool that will generate a CloudFormation template of all assets and asset models (including the hierarchy information) for a given region in an AWS account. You have the option to export only the asset model or both the asset models and asset(s). 
 
+### SiteWise Dashboards Migration Tool
+This tool is used to migrate AWS SiteWise Monitor Dashboards from a source AWS Account into a destination AWS Account.
+
 ### SiteWise Monitor Dashboard Replicator
 Contains a CLI tool that replicates a dashboard of a given asset for all assets of the same asset model. This useful if you have dashboards for each machine and want to copy and keep them in sync for all machines of the same type.
 
