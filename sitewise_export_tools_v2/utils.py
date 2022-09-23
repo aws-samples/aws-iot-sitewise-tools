@@ -16,6 +16,11 @@ def randomize(prefix: str) -> str:
     return cfn_string(prefix) + uuid.uuid4().hex[:8]
 
 
+def title(string: str) -> str:
+    """Similar to str.title() but capitalizes only the first letter"""
+    return string[0].upper() + string[1:]
+
+
 def cfn_string(s: str) -> str:
     """
     Converts string to a form accepted by CloudFormation
@@ -28,7 +33,8 @@ def create_json_template(cfn, name='sitewise-assets-and-models'):
     Saves the dictionary as a json file.
     """
     base_export_path = 'cfnexport'
-    logger.info(f'CloudFormation template of {len(cfn["Resources"])} resources successfully saved at "{base_export_path}/{name}.json"')
+    logger.info(
+        f'CloudFormation template of {len(cfn["Resources"])} resources successfully saved at "{base_export_path}/{name}.json"')
 
     if not os.path.exists(base_export_path):
         os.makedirs(base_export_path)
@@ -45,10 +51,10 @@ def walk_dict_filter(resource, case_handler, **kwargs):
     """
     if isinstance(resource, dict):
         return {
-            k[0].upper() + k[1:]: walk_dict_filter(case_handler(k, v, **{**kwargs, 'parent': resource}), case_handler,
-                                                   **kwargs) for k, v in
+            title(k): walk_dict_filter(case_handler(k, v, **{**kwargs, 'parent': resource}), case_handler,
+                                       **kwargs) for k, v in
             resource.items() if
-            ('shape_filter' in kwargs and k[0].upper() + k[1:] in kwargs[
+            ('shape_filter' in kwargs and title(k) in kwargs[
                 'shape_filter']) or 'shape_filter' not in kwargs}
     elif isinstance(resource, list):
         return [walk_dict_filter(item, case_handler, **{**kwargs, 'parent': item}) for item in resource]
