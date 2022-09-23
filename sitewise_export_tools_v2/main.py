@@ -76,4 +76,4 @@ if __name__ == '__main__':
     cfn = extract(client, assets=args.assets)
 
     # Dump CloudFormation into a json file
-    create_json_template(cfn, name='sitewise-assets-and-models' if args.assets == [] else 'sitewise-models')
+    create_json_template(cfn, name='sitewise-export')

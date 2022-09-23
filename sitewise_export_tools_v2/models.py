@@ -3,7 +3,7 @@
 import logging
 
 from shapes import model_shapes, common_shapes
-from utils import cfn_string, walk_dict_filter, randomize, assert_sitewise_response
+from utils import cfn_string, walk_dict_filter, randomize, assert_sitewise_response, title
 
 client = None
 
@@ -61,7 +61,7 @@ def handle_model_fields(k, v, **kwargs):
             lookup_property_logical_id.update({d['id']: property_logical_id})
 
             # update model_property_lookup for the current model with the new id to property_logical_id mapping
-            current_model = kwargs['current_model']
+            current_model = title(kwargs['current_model'])
             if current_model not in lookup_model_property:
                 lookup_model_property[current_model] = {}
             lookup_model_property[current_model][d['id']] = property_logical_id
@@ -137,7 +137,7 @@ def get_models(client):
 
         # update the hierarchy_id_lookup table (this is a side effect that should be cleaned up)
         global lookup_model_id
-        lookup_model_id.update({model['id']: asset_model_name + 'Resource'})
+        lookup_model_id.update({model['id']: title(asset_model_name) + 'Resource'})
 
         # describe the asset model
         model_def = client.describe_asset_model(assetModelId=model['id'])
